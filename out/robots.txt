@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://dev.aiv.yn.cn/sitemap.xml

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -51,6 +52,16 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <body className="relative">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-4WT5YFX462"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-4WT5YFX462');`}
+        </Script>
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />
           <main className="flex-1">{children}</main>
